@@ -1,6 +1,7 @@
  const express = require('express');
  const hbs = require('hbs');
  const fs = require('fs');
+ const port = process.env
 
  var app=express();
  hbs.registerPartials(__dirname + '/views/partials');
@@ -64,6 +65,7 @@ app.get('/bad',(req,res) => {
 })
 
 /* Mentoning the port for the app */
- app.listen(3000,() => {
-   console.log('Server is up on port 3000');
+// Here we willbe using a environment variable , beccause Herooku will tell what port to use
+ app.listen(port,() => {
+   console.log(`Server is up on port ${port}`);
  });
